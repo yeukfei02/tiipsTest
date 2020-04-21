@@ -72,10 +72,11 @@ function HorizontalItemView({ item }) {
   }
 
   const handleFavouriteIconClick = () => {
-    if (!favouritesClicked)
+    if (!favouritesClicked) {
       setFavouritesClicked(true);
-    else
+    } else {
       setFavouritesClicked(false);
+    }
   }
 
   const getClosingPrice = () => {
