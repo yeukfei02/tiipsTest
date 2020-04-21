@@ -13,6 +13,8 @@ import Divider from '../components/divider/Divider';
 import IconWithBadge from '../components/iconWithBadge/IconWithBadge';
 import ItemView from '../components/itemView/ItemView';
 import HorizontalItemView from '../components/horizontalItemView/HorizontalItemView';
+import StatusBar from '../components/statusBar/StatusBar';
+import TopBar from '../components/topBar/TopBar';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -62,5 +64,15 @@ describe('main.test', () => {
     //   const wrapper = shallow(<HorizontalItemView />);
     //   expect(wrapper).toMatchSnapshot();
     // });
+
+    it('StatusBar', () => {
+      const wrapper = shallow(<StatusBar />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('TopBar', () => {
+      const wrapper = shallow(<TopBar />);
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

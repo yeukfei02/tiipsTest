@@ -2,14 +2,13 @@ import React from 'react';
 import Constants from 'expo-constants';
 import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
+import StatusBar from '../statusBar/StatusBar';
+import TopBar from '../topBar/TopBar';
+
 const styles = StyleSheet.create({
   scrollViewContainer: {
     flex: 1,
     backgroundColor: 'white',
-  },
-  statusBar: {
-    backgroundColor: '#33cc7f',
-    height: Constants.statusBarHeight
   },
   container: {
     flex: 1,
@@ -23,7 +22,8 @@ const styles = StyleSheet.create({
 function Account() {
   return (
     <ScrollView style={styles.scrollViewContainer}>
-      <View style={styles.statusBar} />
+      <StatusBar />
+      <TopBar />
       <View style={styles.container}>
         <Text>Account</Text>
       </View>
