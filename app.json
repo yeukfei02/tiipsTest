@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "tiipsTest",
+    "slug": "tiipsTest",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "sdkVersion": "37.0.0",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.donaldwu.tiipsTest",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.donaldwu.tiipsTest",
+      "versionCode": 1
+    },
+    "description": "tiipsTest",
+    "privacy": "public",
+    "githubUrl": "https://github.com/yeukfei02/tiipsTest"
+  }
+}
