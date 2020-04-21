@@ -1,20 +1,27 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, View, Text } from 'react-native';
 
 const styles = StyleSheet.create({
+  scrollViewContainer: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    marginTop: 200,
     justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
 });
 
 function Account() {
   return (
-    <View style={styles.container}>
-      <Text>Account</Text>
-    </View>
+    <ScrollView style={styles.scrollViewContainer}>
+      <View style={styles.container}>
+        <Text>Account</Text>
+      </View>
+    </ScrollView>
   );
 }
 
