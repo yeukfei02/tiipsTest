@@ -24,9 +24,11 @@ function App() {
   }, []);
 
   const getBadgeCount = async () => {
+    let count = 0;
+
+    // getBadgeCount from request
     const response = await axios.get(`${ROOT_URL}/products/classes`);
     if (response && response.data.data) {
-      let count = 0;
       for (let a = 0; a < response.data.data.length; a++) {
         const obj = response.data.data[a];
         if (obj) {
@@ -38,8 +40,9 @@ function App() {
           }
         }
       }
-      setBadgeCount(count);
     }
+
+    setBadgeCount(count);
   }
 
   return (
