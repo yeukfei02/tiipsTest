@@ -10,10 +10,11 @@ const ROOT_URL = `https://demo-api.bigmind.io/v1`;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 15,
+    padding: 12,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 20,
+    marginTop: 15,
+    marginBottom: 10,
     marginHorizontal: 10,
     backgroundColor: 'lightgray'
   },
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end'
   },
   logo: {
-    width: 80,
+    width: 120,
     height: 80,
     marginTop: 10,
     alignSelf: 'center'
@@ -30,8 +31,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: 'bold',
     color: 'black',
-    marginTop: 8,
-    marginBottom: 6,
+    marginBottom: 5,
     alignSelf: 'center'
   },
   rowContainer: {
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
 });
 
 function HorizontalItemView({ item }) {
+  const [favouritesClicked, setFavouritesClicked] = useState(false);
 
   useEffect(() => {
     // getProductLogo();
@@ -50,6 +51,31 @@ function HorizontalItemView({ item }) {
     const id = item.product_id;
     const response = await axios.get(`${ROOT_URL}/products/logos/${id}`);
     console.log("response.data = ", response.data);
+  }
+
+  const renderFavouriteIcon = () => {
+    let favouriteIcon = null;
+
+    if (item) {
+      if (_.isEqual(item.bookmark, "Y") || favouritesClicked) {
+        favouriteIcon = (
+          <MaterialIcons style={styles.favouriteIcon} name={'favorite'} size={22} color={'red'} onPress={handleFavouriteIconClick} />
+        );
+      } else {
+        favouriteIcon = (
+          <MaterialIcons style={styles.favouriteIcon} name={'favorite-border'} size={22} color={'black'} onPress={handleFavouriteIconClick} />
+        );
+      }
+    }
+
+    return favouriteIcon;
+  }
+
+  const handleFavouriteIconClick = () => {
+    if (!favouritesClicked)
+      setFavouritesClicked(true);
+    else
+      setFavouritesClicked(false);
   }
 
   const getClosingPrice = () => {
@@ -72,43 +98,25 @@ function HorizontalItemView({ item }) {
     return result;
   }
 
-  const renderFavouriteIcon = () => {
-    let favouriteIcon = null;
-
-    if (item) {
-      if (_.isEqual(item.bookmark, "Y")) {
-        favouriteIcon = (
-          <MaterialIcons style={styles.favouriteIcon} name={'favorite'} size={20} color={'red'} />
-        );
-      } else if (_.isEqual(item.bookmark, "N")) {
-        favouriteIcon = (
-          <MaterialIcons style={styles.favouriteIcon} name={'favorite-border'} size={20} color={'black'} onClick={handleFavouriteIconClick} />
-        );
-      }
-    }
-
-    return favouriteIcon;
-  }
-
-  const handleFavouriteIconClick = () => {
-    console.log(123);
-  }
-
   return (
-    <Card style={styles.container}>
-      {renderFavouriteIcon()}
-      <Image
-        style={styles.logo}
-        source={{
-          uri: 'https://reactnative.dev/img/tiny_logo.png',
-        }}
-      />
-      <Text style={styles.titleText}>{item.name}</Text>
-      <View style={styles.rowContainer}>
-        <Text style={{ marginRight: 5 }}>{getClosingPrice()}</Text>
-        <Text>{getPercentageChange()}</Text>
+    <View>
+      <Card style={styles.container}>
+        {renderFavouriteIcon()}
+        <Image
+          style={styles.logo}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+      </Card>
+      <View>
+        <Text style={styles.titleText}>{item.name}</Text>
+        <View style={styles.rowContainer}>
+          <Text style={{ marginRight: 5 }}>{getClosingPrice()}</Text>
+          <Text>{getPercentageChange()}</Text>
+        </View>
       </View>
-    </Card>
+    </View>
   );
 }
 

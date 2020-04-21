@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    marginTop: 100,
+    marginTop: 130,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: 'white',
@@ -47,7 +47,7 @@ function Bookmark() {
               />
             );
           }}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.class_id.toString()}
         />
       </View>
     </ScrollView>

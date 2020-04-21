@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   titleText: {
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 'bold',
     color: 'gray'
   }
@@ -39,7 +39,7 @@ function ItemView({ item }) {
             />
           );
         }}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.product_id}
         horizontal={true}
       />
       <Divider margin={15} />
