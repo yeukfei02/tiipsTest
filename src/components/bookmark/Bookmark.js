@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView, View, FlatList } from 'react-native';
 import axios from 'axios';
 
+import StatusBar from '../statusBar/StatusBar';
+import TopBar from '../topBar/TopBar';
 import ItemView from '../itemView/ItemView';
 
 const ROOT_URL = `https://demo-api.bigmind.io/v1`;
@@ -13,7 +15,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    marginTop: 130,
+    marginTop: 35,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: 'white',
@@ -37,6 +39,8 @@ function Bookmark() {
 
   return (
     <ScrollView style={styles.scrollViewContainer}>
+      <StatusBar />
+      <TopBar />
       <View style={styles.container}>
         <FlatList
           data={resultList}

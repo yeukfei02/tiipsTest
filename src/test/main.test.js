@@ -9,6 +9,13 @@ import Home from '../components/home/Home';
 import Portfolio from '../components/portfolio/Portfolio';
 import Account from '../components/account/Account';
 
+import Divider from '../components/divider/Divider';
+import IconWithBadge from '../components/iconWithBadge/IconWithBadge';
+import ItemView from '../components/itemView/ItemView';
+import HorizontalItemView from '../components/horizontalItemView/HorizontalItemView';
+import StatusBar from '../components/statusBar/StatusBar';
+import TopBar from '../components/topBar/TopBar';
+
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('main.test', () => {
@@ -35,6 +42,36 @@ describe('main.test', () => {
 
     it('Account', () => {
       const wrapper = shallow(<Account />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('Divider', () => {
+      const wrapper = shallow(<Divider />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('IconWithBadge', () => {
+      const wrapper = shallow(<IconWithBadge />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    // it('ItemView', () => {
+    //   const wrapper = shallow(<ItemView />);
+    //   expect(wrapper).toMatchSnapshot();
+    // });
+    //
+    // it('HorizontalItemView', () => {
+    //   const wrapper = shallow(<HorizontalItemView />);
+    //   expect(wrapper).toMatchSnapshot();
+    // });
+
+    it('StatusBar', () => {
+      const wrapper = shallow(<StatusBar />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('TopBar', () => {
+      const wrapper = shallow(<TopBar />);
       expect(wrapper).toMatchSnapshot();
     });
   });
