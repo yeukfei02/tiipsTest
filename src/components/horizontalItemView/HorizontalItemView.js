@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 10,
     marginHorizontal: 10,
-    backgroundColor: 'lightgray'
+    backgroundColor: 'lightgray',
   },
   favouriteIcon: {
     alignSelf: 'flex-end'

@@ -27,26 +27,24 @@ function IconWithBadge({ routeName, focused, size, color, badgeCount }) {
   return (
     <View style={{ width: 24, height: 24, margin: 5 }}>
       {renderIcon()}
-      {badgeCount > 0 && (
-        <View
-          style={{
-            // On React Native < 0.57 overflow outside of parent will not work on Android, see https://git.io/fhLJ8
-            position: 'absolute',
-            right: -6,
-            top: -3,
-            backgroundColor: 'red',
-            borderRadius: 10,
-            width: 16,
-            height: 16,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Text style={{ color: 'white', fontSize: 8, fontWeight: 'bold' }}>
-            {badgeCount}
-          </Text>
-        </View>
-      )}
+      <View
+        style={{
+          // On React Native < 0.57 overflow outside of parent will not work on Android, see https://git.io/fhLJ8
+          position: 'absolute',
+          right: -6,
+          top: -3,
+          backgroundColor: 'red',
+          borderRadius: 10,
+          width: 16,
+          height: 16,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Text style={{ color: 'white', fontSize: 8, fontWeight: 'bold' }}>
+          {badgeCount}
+        </Text>
+      </View>
     </View>
   );
 }
