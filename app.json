@@ -6,7 +6,7 @@
       "ios",
       "android"
     ],
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -22,9 +22,8 @@
     ],
     "sdkVersion": "37.0.0",
     "ios": {
-      "supportsTablet": true,
       "bundleIdentifier": "com.donaldwu.tiipsTest",
-      "buildNumber": "1.0.2"
+      "buildNumber": "1.0.3"
     },
     "android": {
       "package": "com.donaldwu.tiipsTest",
