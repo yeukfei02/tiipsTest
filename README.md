@@ -2,6 +2,8 @@
 
 tiipsTest
 
+<img src="https://github.com/yeukfei02/tiipsTest/blob/master/screenshot.png" width="35%" height="35%">
+
 ## Requirement:
  - install expo-cli
  - install yarn
