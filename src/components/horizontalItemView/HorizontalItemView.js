@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 120,
-    height: 80,
+    height: 90,
     marginTop: 10,
     alignSelf: 'center'
   },
@@ -106,7 +106,7 @@ function HorizontalItemView({ item }) {
         <Image
           style={styles.logo}
           source={{
-            uri: 'https://reactnative.dev/img/tiny_logo.png',
+            uri: 'https://picsum.photos/120/90',
           }}
         />
       </Card>
