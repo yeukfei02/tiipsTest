@@ -40,6 +40,9 @@ $ expo build:android
 // make android app bundle
 $ expo build:android -t app-bundle
 
+// get android keystore
+$ expo fetch:android:keystore
+
 // get current build status
 $ expo build:status
 ```
