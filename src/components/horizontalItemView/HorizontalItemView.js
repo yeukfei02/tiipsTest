@@ -59,11 +59,11 @@ function HorizontalItemView({ item }) {
     if (item) {
       if (_.isEqual(item.bookmark, "Y") || favouritesClicked) {
         favouriteIcon = (
-          <MaterialIcons style={styles.favouriteIcon} name={'favorite'} size={22} color={'red'} onPress={handleFavouriteIconClick} />
+          <MaterialIcons style={styles.favouriteIcon} name={'favorite'} size={25} color={'red'} onPress={handleFavouriteIconClick} />
         );
       } else {
         favouriteIcon = (
-          <MaterialIcons style={styles.favouriteIcon} name={'favorite-border'} size={22} color={'black'} onPress={handleFavouriteIconClick} />
+          <MaterialIcons style={styles.favouriteIcon} name={'favorite-border'} size={25} color={'black'} onPress={handleFavouriteIconClick} />
         );
       }
     }
