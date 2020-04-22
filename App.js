@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons, MaterialCommunityIcons, Entypo, FontAwesome } from '@expo/vector-icons';
 import _ from 'lodash';
-import axios from 'axios';
 
 import Academy from './src/components/academy/Academy';
 import Bookmark from './src/components/bookmark/Bookmark';
@@ -12,39 +11,9 @@ import Portfolio from './src/components/portfolio/Portfolio';
 import Account from './src/components/account/Account';
 import IconWithBadge from './src/components/iconWithBadge/IconWithBadge';
 
-const ROOT_URL = `https://demo-api.bigmind.io/v1`;
-
 const Tab = createBottomTabNavigator();
 
 function App() {
-  const [badgeCount, setBadgeCount] = useState(0);
-
-  useEffect(() => {
-    getBadgeCount();
-  }, []);
-
-  const getBadgeCount = async () => {
-    let count = 0;
-
-    // getBadgeCount from request
-    const response = await axios.get(`${ROOT_URL}/products/classes`);
-    if (response && response.data.data) {
-      for (let a = 0; a < response.data.data.length; a++) {
-        const obj = response.data.data[a];
-        if (obj) {
-          for (let b = 0; b < obj.Details.length; b++) {
-            const item = obj.Details[b];
-            if (_.isEqual(item.bookmark, "Y")) {
-              count += 1;
-            }
-          }
-        }
-      }
-    }
-
-    setBadgeCount(count);
-  }
-
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -57,7 +26,7 @@ function App() {
                 icon = focused ? <FontAwesome name={'book'} size={size} color={color} /> : <FontAwesome name={'book'} size={size} color={color} />;
                 break;
               case 'Bookmark':
-                icon = focused ? <IconWithBadge routeName={'Bookmark'} focused={focused} size={size} color={color} badgeCount={badgeCount} /> : <IconWithBadge routeName={'Bookmark'} focused={focused} size={size} color={color} badgeCount={badgeCount} />;
+                icon = focused ? <IconWithBadge routeName={'Bookmark'} focused={focused} size={size} color={color} /> : <IconWithBadge routeName={'Bookmark'} focused={focused} size={size} color={color} />;
                 break;
               case 'Home':
                 icon = focused ? <MaterialIcons name={'home'} size={size} color={color} /> : <MaterialIcons name={'home'} size={size} color={color} />;
