@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    marginTop: 35,
+    marginTop: 30,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: 'white',
