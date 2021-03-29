@@ -5,11 +5,13 @@ tiipsTest
 <img src="https://github.com/yeukfei02/tiipsTest/blob/master/screenshot.png" width="35%" height="35%">
 
 ## Requirement:
- - install expo-cli
- - install yarn
- - install node (v12+)
+
+- install expo-cli
+- install yarn
+- install node (v12+)
 
 ## Testing and run:
+
 ```
 $ yarn
 
