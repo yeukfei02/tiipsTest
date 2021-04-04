@@ -4,15 +4,15 @@ tiipsTest
 
 <img src="https://github.com/yeukfei02/tiipsTest/blob/master/screenshot.png" width="35%" height="35%">
 
-## Requirement:
+## Requirement
 
 - install expo-cli
 - install yarn
 - install node (v12+)
 
-## Testing and run:
+## Testing and run
 
-```
+```zsh
 $ yarn
 
 // expo start
@@ -31,7 +31,7 @@ $ yarn run test
 $ yarn run lint
 ```
 
-```
+```zsh
 // publish project to expo
 $ expo publish
 
